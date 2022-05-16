@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dawn:item/compressed_baked_potato_1x"
+  }
+}

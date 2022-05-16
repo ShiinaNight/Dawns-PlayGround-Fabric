@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#U#",
+		" # "
+	],
+	"key": {
+		"#": {
+			"item": "dawn:ultimate_compressed_baked_potato"
+		},
+		"U": {
+			"item": "dawn:potato_core"
+		}
+	},
+	"result": {
+		"item": "dawn:the_ultimate_compressed_baked_potato_sword",
+		"count": 1
+	}
+}

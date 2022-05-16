@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smithing",
+	"base": {
+		"item": "dawn:the_ultimate_compressed_baked_potato_sword"
+	},
+	"addition": {
+		"item": "dawn:blessed_potato"
+	},
+	"result": {
+		"item": "dawn:the_great_blessed_ultimate_compressed_baked_potato_sword"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		" # ",
+		"  #"
+	],
+	"key": {
+		"#": {
+			"item": "dawn:the_potato_tower"
+		}
+	},
+	"result": {
+		"item": "dawn:curse_of_the_potato_tower",
+		"count": 1
+	}
+}

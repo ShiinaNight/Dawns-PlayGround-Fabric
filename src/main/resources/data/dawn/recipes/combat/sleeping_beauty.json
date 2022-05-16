@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"#N#",
+		"#S#"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:quartz"
+		},
+		"N": {
+			"item": "minecraft:nether_star"
+		},
+		"S": {
+			"item": "minecraft:golden_sword"
+		}
+	},
+	"result": {
+		"item": "dawn:sleeping_beauty",
+		"count": 1
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dawn:item/curse_of_the_potato_tower"
+  }
+}

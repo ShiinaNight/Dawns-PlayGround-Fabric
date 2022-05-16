@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:paper"
+		},
+		{
+			"item": "dawn:compressed_baked_potato_1x"
+		},
+		{
+			"item": "minecraft:tnt"
+		},
+		{
+			"item": "minecraft:tnt"
+		},
+		{
+			"item": "minecraft:tnt"
+		},
+		{
+			"item": "minecraft:tnt"
+		},
+		{
+			"item": "minecraft:tnt"
+		}
+	],
+	"result": {
+		"item": "dawn:the_potato_tower",
+		"count":1
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "dawn:compressed_baked_potato_1x"
+		}
+	},
+	"result": {
+		"item": "dawn:compressed_baked_potato_2x",
+		"count": 1
+	}
+}

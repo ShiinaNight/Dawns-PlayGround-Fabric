@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:nether_star"
+		},
+		{
+			"item": "dawn:compressed_baked_potato_4x"
+		}
+	],
+	"result": {
+		"item": "dawn:potato_core",
+		"count":1
+	}
+}
