@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "dawn:theone/sword_of_repudiation"
+  }
+}

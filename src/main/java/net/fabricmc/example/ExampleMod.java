@@ -64,6 +64,7 @@ public class ExampleMod implements ModInitializer {
 	public static ToolItem THE_GREAT_BLESSED_ULTIMATE_COMPRESSED_BAKED_POTATO_SWORD = new TheUltimateCompressedBakedPotatoSwordItem(UltimateCompressedBakedPotatoMaterial.INSTANCE, 22, 19.0F, new Item.Settings().group(POTATO_ART));
 	public static final ThePotatoTower THE_POTATO_TOWER = new ThePotatoTower(new FabricItemSettings().group(POTATO_ART).maxCount(1).rarity(Rarity.RARE));
 	public static ToolItem SHUTSU_CRANE = new ShutsuCraneItem(HallowedSteelMaterial.INSTANCE, 15, -2.0F, new Item.Settings().group(ItemGroup.COMBAT).rarity(Rarity.RARE));
+	public static ToolItem SWORD_OF_REPUDIATION = new SwordOfRepudiationItem(BasicWeaponMaterial.INSTANCE, 20, -2.4F, new Item.Settings().group(ItemGroup.COMBAT).rarity(Rarity.EPIC));
 
 
 	// 状态效果的实例
@@ -117,6 +118,7 @@ public class ExampleMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("dawn", "steel_ingot"), STEEL_INGOT);
 		Registry.register(Registry.ITEM, new Identifier("dawn", "hallowed_steel_ingot"), HALLOWED_STEEL_INGOT);
 		Registry.register(Registry.ITEM, new Identifier("dawn", "shutsu_crane"), SHUTSU_CRANE);
+		Registry.register(Registry.ITEM, new Identifier("theone", "sword_of_repudiation"), SWORD_OF_REPUDIATION);
 
 
 		// 状态效果
@@ -206,7 +208,7 @@ public class ExampleMod implements ModInitializer {
 					((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(PING_999MS, 200, 0, false, false));
 				}
 			}
-			/* 土豆神塔 */
+			/* 土豆神塔的诅咒 */
 			if (!playerEntity.isSpectator() && entity instanceof LivingEntity &&
 					playerEntity.hasStatusEffect(CURSE_OF_THE_POTATO_TOWER_EFFECT)
 			) {
@@ -219,6 +221,15 @@ public class ExampleMod implements ModInitializer {
 						world.spawnEntity(itemEntity);
 					}
 				}
+			}
+			/* 否定剑 */
+			if (!playerEntity.isSpectator() && entity instanceof LivingEntity &&
+					playerEntity.getMainHandStack().isOf(SWORD_OF_REPUDIATION))
+			{
+				int _Count = ((LivingEntity) entity).getMainHandStack().getCount();
+				ItemStack _itemStack = ((LivingEntity) entity).getMainHandStack().copy();
+				entity.dropStack(_itemStack);
+				((LivingEntity) entity).getMainHandStack().decrement(_Count);
 			}
 			/* 伤害倍率 */
 			if (!playerEntity.isSpectator() && entity instanceof LivingEntity) {

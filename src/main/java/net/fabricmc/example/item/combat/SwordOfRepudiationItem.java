@@ -1,0 +1,10 @@
+package net.fabricmc.example.item.combat;
+
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterial;
+
+public class SwordOfRepudiationItem extends SwordItem {
+    public SwordOfRepudiationItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
+    }
+}
