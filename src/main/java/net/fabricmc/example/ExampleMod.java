@@ -63,7 +63,7 @@ public class ExampleMod implements ModInitializer {
 	public static ToolItem THE_ULTIMATE_COMPRESSED_BAKED_POTATO_SWORD = new TheUltimateCompressedBakedPotatoSwordItem(UltimateCompressedBakedPotatoMaterial.INSTANCE, 12, 9.0F, new Item.Settings().group(POTATO_ART));
 	public static ToolItem THE_GREAT_BLESSED_ULTIMATE_COMPRESSED_BAKED_POTATO_SWORD = new TheUltimateCompressedBakedPotatoSwordItem(UltimateCompressedBakedPotatoMaterial.INSTANCE, 22, 19.0F, new Item.Settings().group(POTATO_ART));
 	public static final ThePotatoTower THE_POTATO_TOWER = new ThePotatoTower(new FabricItemSettings().group(POTATO_ART).maxCount(1).rarity(Rarity.RARE));
-	public static ToolItem SHUTSU_CRANE = new ShutsuCraneItem(HallowedSteelMaterial.INSTANCE, 15, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
+	public static ToolItem SHUTSU_CRANE = new ShutsuCraneItem(HallowedSteelMaterial.INSTANCE, 15, -2.0F, new Item.Settings().group(ItemGroup.COMBAT).rarity(Rarity.RARE));
 
 
 	// 状态效果的实例

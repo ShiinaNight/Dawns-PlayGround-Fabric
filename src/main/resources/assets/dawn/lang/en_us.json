@@ -23,5 +23,14 @@
   "itemGroup.dawn.potato_art": "Potato Art",
   "item.dawn.steel_ingot": "Steel Ingot",
   "item.dawn.hallowed_steel_ingot": "Hallowed Steel Ingot",
-  "effect.dawn.fragile": "Fragile"
+  "effect.dawn.fragile": "Fragile",
+  "item.dawn.shutsu_crane": "Shutsu Crane",
+  "effect.dawn.overload": "Overload",
+  "item.dawn.shutsu_crane.tooltip": "Right click to enable overload mode",
+  "item.dawn.shutsu_crane.tooltip_empty_line": "",
+  "item.dawn.shutsu_crane.tooltip_overload_line1": "Overload Mode:",
+  "item.dawn.shutsu_crane.tooltip_overload_line2": " +50% Attack Damage",
+  "item.dawn.shutsu_crane.tooltip_overload_line3": " +100% Attack Speed",
+  "item.dawn.shutsu_crane.tooltip_overload_line4": " +75% Movement Speed",
+  "item.dawn.shutsu_crane.tooltip_overload_line5": " Greatly increase saturation consumption"
 }

@@ -22,5 +22,15 @@
   "effect.dawn.curse_of_the_potato_tower": "土豆神塔之诅咒",
   "itemGroup.dawn.potato_art": "土豆工艺",
   "item.dawn.steel_ingot": "钢锭",
-  "item.dawn.hallowed_steel_ingot": "断钢锭"
+  "item.dawn.hallowed_steel_ingot": "断钢锭",
+  "effect.dawn.fragile": "脆弱",
+  "item.dawn.shutsu_crane": "芊汐纸鸢",
+  "effect.dawn.overload": "过载",
+  "item.dawn.shutsu_crane.tooltip": "右键启用过载模式",
+  "item.dawn.shutsu_crane.tooltip_empty_line": "",
+  "item.dawn.shutsu_crane.tooltip_overload_line1": "过载模式：",
+  "item.dawn.shutsu_crane.tooltip_overload_line2": " +50% 攻击伤害",
+  "item.dawn.shutsu_crane.tooltip_overload_line3": " +100% 攻击速度",
+  "item.dawn.shutsu_crane.tooltip_overload_line4": " +75% 移动速度",
+  "item.dawn.shutsu_crane.tooltip_overload_line5": " 大幅度提升饱和度消耗"
 }
