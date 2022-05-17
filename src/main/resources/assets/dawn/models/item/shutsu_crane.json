@@ -1,0 +1,16 @@
+{
+    "overrides": [
+        {
+            "predicate": {
+                "overload": 0.0
+            },
+            "model": "dawn:item/shutsu_crane_normal"
+        },
+        {
+            "predicate": {
+                "overload": 1.0
+            },
+            "model": "dawn:item/shutsu_crane_overload"
+        }
+    ]
+}
