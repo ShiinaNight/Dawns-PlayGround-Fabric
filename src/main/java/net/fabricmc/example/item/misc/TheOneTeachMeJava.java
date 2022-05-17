@@ -1,4 +1,4 @@
-package net.fabricmc.example.item;
+package net.fabricmc.example.item.misc;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.SnowballEntity;

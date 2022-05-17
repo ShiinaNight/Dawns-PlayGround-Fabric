@@ -1,4 +1,4 @@
-package net.fabricmc.example.item;
+package net.fabricmc.example.item.combat;
 
 import net.fabricmc.example.effect.CursedCat;
 import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;

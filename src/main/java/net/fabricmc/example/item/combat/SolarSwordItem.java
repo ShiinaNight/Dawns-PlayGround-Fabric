@@ -1,4 +1,4 @@
-package net.fabricmc.example.item;
+package net.fabricmc.example.item.combat;
 
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

@@ -1,15 +1,11 @@
 package net.fabricmc.example;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.example.effect.CurseOfThePotatoTower;
-import net.fabricmc.example.effect.CursedCat;
-import net.fabricmc.example.effect.DarkErosion;
-import net.fabricmc.example.effect.Ping999ms;
-import net.fabricmc.example.item.*;
-import net.fabricmc.example.material.BasicWeaponMaterial;
-import net.fabricmc.example.material.SoulSteelMaterial;
-import net.fabricmc.example.material.SteelMaterial;
-import net.fabricmc.example.material.UltimateCompressedBakedPotatoMaterial;
+import net.fabricmc.example.effect.*;
+import net.fabricmc.example.item.combat.*;
+import net.fabricmc.example.item.misc.TheOneTeachMeJava;
+import net.fabricmc.example.item.misc.ThePotatoTower;
+import net.fabricmc.example.material.*;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -26,6 +22,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,12 +44,15 @@ public class ExampleMod implements ModInitializer {
 	public static final Item COMPRESSED_BAKED_POTATO_3X = new Item(new FabricItemSettings().group(POTATO_ART));
 	public static final Item COMPRESSED_BAKED_POTATO_4X = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(16));
 	public static final Item ULTIMATE_COMPRESSED_BAKED_POTATO = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(1));
-	public static final Item POTATO_CORE = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(1));
-	public static final Item BLESSED_POTATO = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(1));
+	public static  Item POTATO_CORE = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(1).rarity(Rarity.RARE));
+	public static final Item STEEL_INGOT = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+	public static final Item HALLOWED_STEEL_INGOT = new Item(new FabricItemSettings().group(ItemGroup.MISC).rarity(Rarity.RARE));
+
+
 
 
 	// 特殊物品的实例
-	public static final TheOneTeachMeJava THEONE_TEACH_ME_JAVA = new TheOneTeachMeJava(new FabricItemSettings().group(ItemGroup.MISC).maxCount(1024));
+	public static final TheOneTeachMeJava THEONE_TEACH_ME_JAVA = new TheOneTeachMeJava(new FabricItemSettings().maxCount(1024));
 	public static ToolItem SLEEPING_BEAUTY = new SwordItem(BasicWeaponMaterial.INSTANCE, 23, -2.4F, new Item.Settings().group(ItemGroup.COMBAT));
 	public static ToolItem KATANA = new KatanaItem(SteelMaterial.INSTANCE, 11, -3.2F, new Item.Settings().group(ItemGroup.COMBAT));
 	public static ToolItem TEST_SOUL_STEEL_ITEM = new SoulSteelSwordItem(SoulSteelMaterial.INSTANCE, 0, -2.4F, new Item.Settings().group(ItemGroup.COMBAT));
@@ -62,7 +62,8 @@ public class ExampleMod implements ModInitializer {
 	public static ToolItem SOLAR_SWORD = new SolarSwordItem(BasicWeaponMaterial.INSTANCE, 0, 0.0F, new Item.Settings().group(ItemGroup.COMBAT));
 	public static ToolItem THE_ULTIMATE_COMPRESSED_BAKED_POTATO_SWORD = new TheUltimateCompressedBakedPotatoSwordItem(UltimateCompressedBakedPotatoMaterial.INSTANCE, 12, 9.0F, new Item.Settings().group(POTATO_ART));
 	public static ToolItem THE_GREAT_BLESSED_ULTIMATE_COMPRESSED_BAKED_POTATO_SWORD = new TheUltimateCompressedBakedPotatoSwordItem(UltimateCompressedBakedPotatoMaterial.INSTANCE, 22, 19.0F, new Item.Settings().group(POTATO_ART));
-	public static final ThePotatoTower THE_POTATO_TOWER = new ThePotatoTower(new FabricItemSettings().group(POTATO_ART).maxCount(1));
+	public static final ThePotatoTower THE_POTATO_TOWER = new ThePotatoTower(new FabricItemSettings().group(POTATO_ART).maxCount(1).rarity(Rarity.RARE));
+	public static ToolItem SHUTSU_CRANE = new ShutsuCraneItem(HallowedSteelMaterial.INSTANCE, 15, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
 
 
 	// 状态效果的实例
@@ -70,10 +71,18 @@ public class ExampleMod implements ModInitializer {
 	public static final StatusEffect DARK_EROSION = new DarkErosion();
 	public static final StatusEffect PING_999MS = new Ping999ms();
 	public static final StatusEffect CURSE_OF_THE_POTATO_TOWER_EFFECT = new CurseOfThePotatoTower();
+	public static final StatusEffect FRAGILE = new Fragile();
+	public static final StatusEffect OVERLOAD = new Overload();
+
 
 
 	// 食物的实例
-	public static final Item CURSE_OF_THE_POTATO_TOWER_ITEM = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(1)
+	public static final Item BLESSED_POTATO = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(1).rarity(Rarity.EPIC)
+			.food(new FoodComponent.Builder().hunger(10).saturationModifier(10.0F)
+					.statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 72000, 3), 1.0F)
+					.build()));
+
+	public static final Item CURSE_OF_THE_POTATO_TOWER_ITEM = new Item(new FabricItemSettings().group(POTATO_ART).maxCount(1).rarity(Rarity.RARE)
 			.food(new FoodComponent.Builder().hunger(0)
 					.statusEffect(new StatusEffectInstance(CURSE_OF_THE_POTATO_TOWER_EFFECT, 6000, 0), 1.0F)
 					.build()));
@@ -105,7 +114,9 @@ public class ExampleMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("dawn", "blessed_potato"), BLESSED_POTATO);
 		Registry.register(Registry.ITEM, new Identifier("dawn", "the_potato_tower"), THE_POTATO_TOWER);
 		Registry.register(Registry.ITEM, new Identifier("dawn", "curse_of_the_potato_tower"), CURSE_OF_THE_POTATO_TOWER_ITEM);
-
+		Registry.register(Registry.ITEM, new Identifier("dawn", "steel_ingot"), STEEL_INGOT);
+		Registry.register(Registry.ITEM, new Identifier("dawn", "hallowed_steel_ingot"), HALLOWED_STEEL_INGOT);
+		Registry.register(Registry.ITEM, new Identifier("dawn", "shutsu_crane"), SHUTSU_CRANE);
 
 
 		// 状态效果
@@ -113,7 +124,8 @@ public class ExampleMod implements ModInitializer {
 		Registry.register(Registry.STATUS_EFFECT, new Identifier("dawn", "dark_erosion"), DARK_EROSION);
 		Registry.register(Registry.STATUS_EFFECT, new Identifier("dawn", "ping_999ms"), PING_999MS);
 		Registry.register(Registry.STATUS_EFFECT, new Identifier("dawn", "curse_of_the_potato_tower"), CURSE_OF_THE_POTATO_TOWER_EFFECT);
-
+		Registry.register(Registry.STATUS_EFFECT, new Identifier("dawn", "fragile"), FRAGILE);
+		Registry.register(Registry.STATUS_EFFECT, new Identifier("dawn", "overload"), OVERLOAD);
 
 
 		// 添加攻击事件
@@ -123,6 +135,7 @@ public class ExampleMod implements ModInitializer {
 			float final_damage = (float) playerEntity.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
 			float final_true_damage = 0.0F;
 			float percent_damage = 0.0F;
+			float damage_multiplier = 1.0F;
 			/* theOne教我Java! */
 			if (!playerEntity.isSpectator() &&
 					playerEntity.getMainHandStack().isOf(THEONE_TEACH_ME_JAVA))
@@ -207,8 +220,17 @@ public class ExampleMod implements ModInitializer {
 					}
 				}
 			}
+			/* 伤害倍率 */
+			if (!playerEntity.isSpectator() && entity instanceof LivingEntity) {
+				if (((LivingEntity) entity).hasStatusEffect(FRAGILE)) {
+					damage_multiplier += 0.05*(((LivingEntity) entity).getStatusEffect(FRAGILE).getAmplifier()+1);
+				}
+			}
 			/* 造成伤害 */
 			if (!playerEntity.isSpectator() && entity instanceof LivingEntity) {
+				final_damage *= damage_multiplier;
+				final_true_damage *= damage_multiplier;
+
 				if (((LivingEntity) entity).getHealth() > final_true_damage) {
 					((LivingEntity) entity).setHealth(((LivingEntity) entity).getHealth() - final_true_damage);
 				} else entity.damage(DamageSource.player(playerEntity), 9999.0F);

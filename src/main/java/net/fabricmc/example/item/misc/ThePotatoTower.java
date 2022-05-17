@@ -1,4 +1,4 @@
-package net.fabricmc.example.item;
+package net.fabricmc.example.item.misc;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ItemEntity;

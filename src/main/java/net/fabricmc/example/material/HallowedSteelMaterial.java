@@ -4,22 +4,22 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-import static net.fabricmc.example.ExampleMod.STEEL_INGOT;
+import static net.fabricmc.example.ExampleMod.HALLOWED_STEEL_INGOT;
 
-public class SteelMaterial implements ToolMaterial {
+public class HallowedSteelMaterial implements ToolMaterial {
 
-    public static final SteelMaterial INSTANCE = new SteelMaterial();
+    public static final HallowedSteelMaterial INSTANCE = new HallowedSteelMaterial();
 
     @Override
     // 耐久
     public int getDurability() {
-        return 1000;
+        return 10000;
     }
 
     @Override
     // 挖掘速度
     public float getMiningSpeedMultiplier() {
-        return 5.0F;
+        return 7.0F;
     }
 
     @Override
@@ -31,18 +31,18 @@ public class SteelMaterial implements ToolMaterial {
     @Override
     // 挖掘等级
     public int getMiningLevel() {
-        return 3;
+        return 4;
     }
 
     @Override
     // 附魔权重(获得高级附魔的能力)
     public int getEnchantability() {
-        return 10;
+        return 25;
     }
 
     @Override
     // 修复用材料
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(STEEL_INGOT);
+        return Ingredient.ofItems(HALLOWED_STEEL_INGOT);
     }
 }

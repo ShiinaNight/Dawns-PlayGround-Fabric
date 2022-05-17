@@ -14,11 +14,13 @@
   "item.dawn.compressed_baked_potato_4x": "四重压缩烤土豆",
   "item.dawn.the_ultimate_compressed_baked_potato_sword": "育碧之怒，传说中的终极压缩烤土豆剑",
   "item.dawn.the_great_blessed_ultimate_compressed_baked_potato_sword": "永久封禁，传说中伟大的、被祝福的终极压缩烤土豆剑",
-  "item.dawn.potato_core": "§b土豆核心",
+  "item.dawn.potato_core": "土豆核心",
   "item.dawn.blessed_potato": "§6被祝福的土豆",
-  "item.dawn.the_potato_tower": "§bXVI - 土豆神塔",
+  "item.dawn.the_potato_tower": "XVI - 土豆神塔",
   "item.dawn.the_potato_tower.tooltip": "Potato Brings Potatoes",
-  "item.dawn.curse_of_the_potato_tower": "§b土豆神塔之诅咒",
+  "item.dawn.curse_of_the_potato_tower": "土豆神塔之诅咒",
   "effect.dawn.curse_of_the_potato_tower": "土豆神塔之诅咒",
-  "itemGroup.dawn.potato_art": "土豆工艺"
+  "itemGroup.dawn.potato_art": "土豆工艺",
+  "item.dawn.steel_ingot": "钢锭",
+  "item.dawn.hallowed_steel_ingot": "断钢锭"
 }

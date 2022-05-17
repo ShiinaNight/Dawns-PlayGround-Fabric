@@ -1,14 +1,11 @@
 package net.fabricmc.example.effect;
 
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-import static net.fabricmc.example.ExampleMod.CURSED_CAT;
-
-public class DarkErosion extends StatusEffect {
-    public DarkErosion() {
-        super(StatusEffectCategory.HARMFUL, 0xFFD700);
+public class Fragile extends StatusEffect {
+    public Fragile() {
+        super(StatusEffectCategory.HARMFUL, 0x55FFFF);
     }
 
     @Override
